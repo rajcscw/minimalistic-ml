@@ -11,7 +11,7 @@ And, these programs are for didactic purposes only and hence, they are not produ
 
 It contains/will contain :)
 
-- Gradient descent - A simple optimization technique
+- [Gradient descent - A simple optimization technique](https://github.com/rajcscw/minimalistic-ml/blob/master/gradient-descent/gradient-descent.ipynb)
 - Linear regression
 - Support Vector Machines
 
