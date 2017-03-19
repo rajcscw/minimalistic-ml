@@ -10,7 +10,7 @@ def fun_der_x(x,y):
     return (x/y**2)
 
 def fun_der_y(x,y):
-    return (-3 * x**2/y**3)
+    return (-x**2/y**3)
 
 # Initial values - Start the solution search randomly
 random = np.random.randint(-100,100,2)
