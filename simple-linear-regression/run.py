@@ -47,7 +47,7 @@ for i in range(n_iter):
         w0 += -step_size * w0_grad
         w1 += -step_size * w1_grad
 
-    # Print squared loss at each iteration
+    # Print squared loss every 100 iterations
     if i % 100 == 0:
         loss = np.sum((fun(w0, w1, X) - Y)**2)
         print("Loss: "+str(loss))
