@@ -48,8 +48,9 @@ for i in range(n_iter):
         w1 += -step_size * w1_grad
 
     # Print squared loss at each iteration
-    loss = np.sum((fun(w0, w1, X) - Y)**2)
-    print("Loss: "+str(loss))
+    if i % 100 == 0:
+        loss = np.sum((fun(w0, w1, X) - Y)**2)
+        print("Loss: "+str(loss))
 
 # Plot the predicted line
 Y_pred = fun(w0, w1, X)

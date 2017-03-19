@@ -2,15 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0fe21134-a185-4466-bd63-047be8cebc6e" name="Default" comment="">
-      <change type="MOVED" beforePath="$PROJECT_DIR$/linear-regression/.ipynb_checkpoints/gradient-descent-checkpoint.ipynb" afterPath="$PROJECT_DIR$/simple-linear-regression/.ipynb_checkpoints/gradient-descent-checkpoint.ipynb" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/linear-regression/run.py" afterPath="$PROJECT_DIR$/simple-linear-regression/run.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradient-descent/gradient-descent_files/gradient-descent_10_1.png" afterPath="$PROJECT_DIR$/gradient-descent/gradient-descent_files/gradient-descent_10_1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradient-descent/gradient-descent_files/gradient-descent_15_0.png" afterPath="$PROJECT_DIR$/gradient-descent/gradient-descent_files/gradient-descent_15_0.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradient-descent/.ipynb_checkpoints/gradient-descent-checkpoint.ipynb" afterPath="$PROJECT_DIR$/gradient-descent/.ipynb_checkpoints/gradient-descent-checkpoint.ipynb" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradient-descent/gradient-descent.ipynb" afterPath="$PROJECT_DIR$/gradient-descent/gradient-descent.ipynb" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradient-descent/gradient-descent.md" afterPath="$PROJECT_DIR$/gradient-descent/gradient-descent.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/gradient-descent/run.py" afterPath="$PROJECT_DIR$/gradient-descent/run.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple-linear-regression/points.svg" afterPath="$PROJECT_DIR$/simple-linear-regression/points.svg" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/simple-linear-regression/run.py" afterPath="$PROJECT_DIR$/simple-linear-regression/run.py" />
     </list>
     <ignored path="minimalistic-ml.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -27,7 +22,7 @@
   <component name="CoverageDataManager">
     <SUITE FILE_PATH="coverage/minimalistic-ml$run.coverage" NAME="run Coverage Results" MODIFIED="1489925091143" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/linear-regression" />
     <SUITE FILE_PATH="coverage/minimalistic-ml$gradient_descent.coverage" NAME="gradient-descent Coverage Results" MODIFIED="1489922828234" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/gradient-descent" />
-    <SUITE FILE_PATH="coverage/minimalistic-ml$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1489929649473" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simple-linear-regression" />
+    <SUITE FILE_PATH="coverage/minimalistic-ml$run__1_.coverage" NAME="run (1) Coverage Results" MODIFIED="1489952175923" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/simple-linear-regression" />
   </component>
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
@@ -38,51 +33,14 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="run.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/simple-linear-regression/run.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
+            <state relative-caret-position="258">
+              <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="52" selection-end-column="33" />
               <folding>
                 <element signature="e#0#18#0" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gradient-descent.ipynb" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradient-descent/gradient-descent.ipynb">
-          <provider selected="true" editor-type-id="ipnb-editor">
-            <state>
-              <selected id="2" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="run.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/gradient-descent/run.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="0" selection-start-line="5" selection-start-column="0" selection-end-line="12" selection-end-column="23" />
-              <folding>
-                <element signature="e#0#18#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="gradient-descent.md" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/gradient-descent/gradient-descent.md">
-          <provider editor-type-id="MarkdownFxPreviewEditor">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="FIRST">
-              <first_editor relative-caret-position="45">
-                <caret line="3" column="1" selection-start-line="0" selection-start-column="0" selection-end-line="144" selection-end-column="0" />
-                <folding />
-              </first_editor>
-              <second_editor />
             </state>
           </provider>
         </entry>
@@ -115,9 +73,9 @@
         <option value="$PROJECT_DIR$/linear-regression/simple-linear-regression.md.ipynb" />
         <option value="$PROJECT_DIR$/simple-linear-regression/simple-linear-regression.md.ipynb" />
         <option value="$PROJECT_DIR$/simple-linear-regression/simple-linear-regression.ipynb" />
-        <option value="$PROJECT_DIR$/simple-linear-regression/run.py" />
         <option value="$PROJECT_DIR$/gradient-descent/gradient-descent.ipynb" />
         <option value="$PROJECT_DIR$/gradient-descent/run.py" />
+        <option value="$PROJECT_DIR$/simple-linear-regression/run.py" />
       </list>
     </option>
   </component>
@@ -919,16 +877,16 @@
       <option name="presentableId" value="Default" />
       <updated>1489856871834</updated>
       <workItem from="1489856875017" duration="8293000" />
-      <workItem from="1489872804722" duration="10966000" />
+      <workItem from="1489872804722" duration="11317000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19259000" />
+    <option name="totallyTimeSpent" value="19610000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -937,11 +895,11 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.27414772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4034091" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.27414772" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4034091" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24959612" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -1043,23 +1001,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/simple-linear-regression/run.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="19" selection-start-line="20" selection-start-column="19" selection-end-line="20" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#18#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradient-descent/gradient-descent.ipynb">
-      <provider selected="true" editor-type-id="ipnb-editor">
-        <state>
-          <selected id="2" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/gradient-descent/run.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -1081,6 +1022,23 @@
             <folding />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gradient-descent/gradient-descent.ipynb">
+      <provider selected="true" editor-type-id="ipnb-editor">
+        <state>
+          <selected id="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/simple-linear-regression/run.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="258">
+          <caret line="49" column="4" selection-start-line="49" selection-start-column="4" selection-end-line="52" selection-end-column="33" />
+          <folding>
+            <element signature="e#0#18#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
