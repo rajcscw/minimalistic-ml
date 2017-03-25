@@ -31,7 +31,7 @@ W = np.random.uniform(-5,5, D)
 n_iter = 500
 step_size = 5e-5
 
-# Train the network
+# Train the neuron
 for i in range(n_iter):
     for j in range(N):
         # x and y
@@ -42,12 +42,12 @@ for i in range(n_iter):
         f = fun(W,x)
 
         # Compute gradients
-        w_grad = 2 * (f - y) * (1-f**2) * x.T
+        w_grad = (f - y) * (1-f**2) * x.T
 
         # Do a backward pass (updates gradient)
         W -= step_size * w_grad
 
-    # Print squared loss every 100 iterations
+    # Print squared loss every 10 iterations
     if i % 10 == 0:
         Y_pred = predict(W,X)
         incorrect = np.sum(Y != Y_pred)
