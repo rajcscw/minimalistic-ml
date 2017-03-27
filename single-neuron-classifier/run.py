@@ -3,17 +3,17 @@ import numpy as np
 import matplotlib.pyplot as plt
 import seaborn as sns
 
-def fun(W, X):
-    return np.tanh(np.dot(W, X))
+def fun(W, b, X):
+    return np.tanh(np.dot(W, X)+b)
 
 def generate_points(N,D):
-    X, Y = datasets.make_classification(n_samples=1000, n_features=2, n_informative=2, n_redundant=0, class_sep=1.0)
+    X, Y = datasets.make_moons(n_samples=N, noise=0.3, random_state=0)
     X = X.T
     Y[Y==0] = -1
     return X,Y
 
-def predict(W,X):
-    pred = fun(W,X)
+def predict(W,b, X):
+    pred = fun(W, b, X)
     pred[pred <= 0] = -1
     pred[pred > 0] = 1
     return pred
@@ -21,15 +21,16 @@ def predict(W,X):
 # Generate data
 N = 1000
 D = 2
-np.random.seed(20)
+np.random.seed(0)
 X,Y = generate_points(N,D)
 
 # Initialize weight W
-W = np.random.uniform(-5,5, D)
+W = np.random.rand(D)
+b = np.random.rand(1)
 
 # Parameters
 n_iter = 500
-step_size = 5e-5
+step_size = 0.01
 
 # Train the neuron
 for i in range(n_iter):
@@ -39,17 +40,19 @@ for i in range(n_iter):
         y = Y[j]
 
         # Do a forward pass
-        f = fun(W,x)
+        f = fun(W, b, x)
 
         # Compute gradients
         w_grad = (f - y) * (1-f**2) * x.T
+        b_grad = (f-y) * (1-f**2)
 
         # Do a backward pass (updates gradient)
         W -= step_size * w_grad
+        b -= step_size * b_grad
 
     # Print squared loss every 10 iterations
     if i % 10 == 0:
-        Y_pred = predict(W,X)
+        Y_pred = predict(W, b, X)
         incorrect = np.sum(Y != Y_pred)
         print("Loss: "+str(incorrect/N * 100)+" %")
 
@@ -61,7 +64,7 @@ x_min, x_max = X[0, :].min() - 1, X[0,:].max() + 1
 y_min, y_max = X[1,:].min() - 1, X[1,:].max() + 1
 xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                      np.arange(y_min, y_max, h))
-Z = predict(W, np.c_[xx.ravel(),yy.ravel()].T)
+Z = predict(W, b, np.c_[xx.ravel(),yy.ravel()].T)
 Z = Z.reshape(xx.shape)
 cm = plt.cm.YlGn
 ax.contourf(xx, yy, Z, cmap=cm, alpha=0.8)
@@ -70,8 +73,6 @@ ax.scatter(X[0, :],X[1,:],c=col)
 plt.show()
 
 # Print accuracy
-Y_pred = fun(W,X)
-Y_pred[Y_pred <= 0] = -1
-Y_pred[Y_pred > 0] = 1
+Y_pred = predict(W, b, X)
 correct = np.sum(Y == Y_pred)
 print("The accuracy is: " + str(correct/N * 100)+" %")

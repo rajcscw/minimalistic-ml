@@ -25,8 +25,12 @@ D = 2
 np.random.seed(0)
 X,Y = generate_points(N,D)
 
-# Initialize weight W and b
-hid = 3
+# Initialize weights W and biases b for all hidden layers and output layer
+hidden =[3]
+n_hid = len(hidden)
+
+
+
 W_ih = np.random.rand(hid,2)
 bi_h = np.random.rand(hid, 1)
 W_ho = np.random.rand(1,hid)
