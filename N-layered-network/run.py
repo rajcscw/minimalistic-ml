@@ -12,32 +12,41 @@ def generate_points(N,D):
     Y[Y==0] = -1
     return X,Y
 
-def predict(W_ih, W_ho,bi_h, bi_o, X):
-    hidden_layer = fun(W_ih, bi_h, X)
-    output_layer = fun(W_ho, bi_o, hidden_layer)
-    output_layer[output_layer <= 0] = -1
-    output_layer[output_layer > 0] = 1
-    return output_layer
+def predict(W, b, X):
+    activations = []
+    activations.append(X)
+    for h in range(1, n_hid+2):
+        activation = fun(W[h-1], b[h-1], activations[h-1])
+        activations.append(activation)
+    output_activation = activations[n_hid+1]
+    output_activation[output_activation <= 0] = -1
+    output_activation[output_activation > 0] = 1
+    return output_activation
 
 # Generate data
 N = 1000
 D = 2
+
 np.random.seed(0)
 X,Y = generate_points(N,D)
 
 # Initialize weights W and biases b for all hidden layers and output layer
-hidden =[3]
+n_input = D
+n_output = 1
+hidden =[20,10,10]
 n_hid = len(hidden)
-
-
-
-W_ih = np.random.rand(hid,2)
-bi_h = np.random.rand(hid, 1)
-W_ho = np.random.rand(1,hid)
-bi_o = np.random.rand(1,1)
+W = []
+b = []
+prev_dim = n_input
+for i in range(0,n_hid):
+    W.append(np.random.rand(hidden[i], prev_dim))
+    b.append(np.random.rand(hidden[i], 1))
+    prev_dim = hidden[i]
+W.append(np.random.rand(n_output, prev_dim))
+b.append(np.random.rand(n_output,1))
 
 # Parameters
-n_iter = 500
+n_iter = 1000
 step_size = 0.01
 
 # Train the neuron
@@ -48,22 +57,35 @@ for i in range(n_iter):
         y = Y[j]
 
         # Do a forward pass
-        hidden_layer = fun(W_ih, bi_h, x)
-        output_layer = fun(W_ho, bi_o, hidden_layer)
+        activations = []
+        activations.append(x)
+        for h in range(1, n_hid+2):
+            activation = fun(W[h-1], b[h-1], activations[h-1])
+            activations.append(activation)
+        output_activation = activations[n_hid+1]
 
         # Do a backward pass
-        loss_gradient = (output_layer - y)
-        delta_output = loss_gradient * (1-output_layer**2)
-        delta_hidden = np.dot(W_ho.transpose(), delta_output) * (1-hidden_layer**2)
+        loss_gradient = (output_activation - y)
+        delta_output = loss_gradient * (1-output_activation**2)
+        prev_delta = delta_output
+        delta_hidden = {}
+        for h in range(n_hid, 0, -1):
+            delta = np.dot(W[h].transpose(), prev_delta) * (1-activations[h]**2)
 
-        W_ho -= step_size * np.dot(delta_output, hidden_layer.transpose())
-        bi_o -= step_size * delta_output
-        W_ih -= step_size * np.dot(delta_hidden, x.transpose())
-        bi_h -= step_size * delta_hidden
+            # Now that we have used the previous layer's weight, we can safely update
+            # Update the weights and bias for the previous layer
+            W[h] -= step_size * np.dot(prev_delta, activations[h].transpose())
+            b[h]-= step_size * prev_delta
+
+            prev_delta = delta
+
+        # Update the weights to input-to-1st hidden layer
+        W[0] -= step_size * np.dot(prev_delta, activations[0].transpose())
+        b[0] -= step_size * prev_delta
 
     # Print squared loss every 10 iterations
     if i % 10 == 0:
-        Y_pred = predict(W_ih, W_ho, bi_h, bi_o, X)
+        Y_pred = predict(W, b, X)
         incorrect = np.sum(Y != Y_pred)
         print("Loss: "+str(incorrect/N * 100)+" %")
 
@@ -77,7 +99,7 @@ xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
                      np.arange(y_min, y_max, h))
 
 input = np.c_[xx.ravel(),yy.ravel()].T
-Z = predict(W_ih, W_ho, bi_h, bi_o, input)
+Z = predict(W, b, input)
 Z = Z.reshape(xx.shape)
 cm = plt.cm.YlGn
 ax.contourf(xx, yy, Z, cmap=cm, alpha=0.8)
@@ -86,6 +108,6 @@ ax.scatter(X[0, :],X[1,:],c=col)
 plt.show()
 
 # Print accuracy
-Y_pred = predict(W_ih, W_ho, bi_h, bi_o, X)
+Y_pred = predict(W, b, X)
 correct = np.sum(Y == Y_pred)
 print("The accuracy is: " + str(correct/N * 100)+" %")
