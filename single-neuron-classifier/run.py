@@ -30,7 +30,7 @@ b = np.random.rand(1)
 
 # Parameters
 n_iter = 500
-step_size = 0.01
+step_size = 1e-4
 
 # Train the neuron
 for i in range(n_iter):
@@ -67,10 +67,10 @@ xx, yy = np.meshgrid(np.arange(x_min, x_max, h),
 Z = predict(W, b, np.c_[xx.ravel(),yy.ravel()].T)
 Z = Z.reshape(xx.shape)
 cm = plt.cm.YlGn
-ax.contourf(xx, yy, Z, cmap=cm, alpha=0.8)
+#ax.contourf(xx, yy, Z, cmap=cm, alpha=0.8)
 col = np.where(Y==-1,'y','g')
 ax.scatter(X[0, :],X[1,:],c=col)
-plt.show()
+plt.savefig("points.svg")
 
 # Print accuracy
 Y_pred = predict(W, b, X)
