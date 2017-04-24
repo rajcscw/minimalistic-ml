@@ -34,7 +34,7 @@ bi_o = np.random.rand(1,1)
 
 # Parameters
 n_iter = 500
-step_size = 0.01
+step_size = 1e-3
 
 # Train the neuron
 for i in range(n_iter):
@@ -52,6 +52,7 @@ for i in range(n_iter):
         delta_output = loss_gradient * (1-output_layer**2)
         delta_hidden = np.dot(W_ho.transpose(), delta_output) * (1-hidden_layer**2)
 
+        # Adjust the weights and bias
         W_ho -= step_size * np.dot(delta_output, hidden_layer.transpose())
         bi_o -= step_size * delta_output
         W_ih -= step_size * np.dot(delta_hidden, x.transpose())

@@ -33,7 +33,7 @@ X,Y = generate_points(N,D)
 # Initialize weights W and biases b for all hidden layers and output layer
 n_input = D
 n_output = 1
-hidden =[20,10,10]
+hidden =[10, 5, 5]
 n_hid = len(hidden)
 W = []
 b = []
@@ -46,8 +46,8 @@ W.append(np.random.rand(n_output, prev_dim))
 b.append(np.random.rand(n_output,1))
 
 # Parameters
-n_iter = 1000
-step_size = 0.01
+n_iter = 2000
+step_size = 1e-2
 
 # Train the neuron
 for i in range(n_iter):
